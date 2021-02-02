@@ -5,7 +5,7 @@ import cookieParser from 'cookie-parser'
 import compress from 'compression'
 import cors from 'cors'
 import helmet from 'helmet'
-import Index from './../index'
+import Template from './../index'
 import userRoutes from './routes/user.routes'
 import authRoutes from './routes/auth.routes'
 
@@ -60,7 +60,7 @@ app.get('*', (req, res) => {
       return res.redirect(303, context.url)
     }
     const css = sheets.toString()
-    res.status(200).send(Index({
+    res.status(200).send(Template({
       markup: markup,
       css: css
     }))
